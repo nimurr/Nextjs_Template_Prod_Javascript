@@ -1,21 +1,24 @@
 "use client";
 
+import PrimaryButton from "@/components/global/PrimaryButton";
+import { IconMapPin } from "@tabler/icons-react";
 import { toast } from "react-toastify";
 
 export default function Home() {
   const handleClick = () => {
-    toast.success("Toast Message successfully show !");
+    toast.info("Toast Message successfully show !");
   };
 
   return (
     <div className="flex items-center justify-center h-screen">
       <div>
-        <button
-          onClick={handleClick}
-          className="bg-primary text-white cursor-pointer px-6 py-3 rounded-md hover:bg-primary/90 transition-all duration-300 mb-5 mx-auto block"
-        >
-          Primary Button
-        </button>
+
+        <div className="flex items-center justify-center mb-5">
+          <PrimaryButton onClick={handleClick} startIcon={<IconMapPin stroke={2} />} className=" cursor-pointer">
+            Primary Button
+          </PrimaryButton>
+        </div>
+
         <div className="text-center text-white space-x-1">
           <span className="bg-amber-700 p-1 rounded">Next js</span>
           <span className="bg-blue-700 p-1 rounded">Tailwind</span>
